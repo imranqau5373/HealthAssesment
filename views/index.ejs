@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Grist Application</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
     <h1>Welcome to GRiST XML Page.</h1>
     <p>Read the xml file</p>
-
+    <% listOfComments.forEach((item) => { %>
+      <li><%= item.comment%> : <%= item.commentDate%>  </li>
+    <% })%>
     <a href="/facebook">Post on Facebook</a>
   </body>
 </html>
