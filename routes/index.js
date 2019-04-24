@@ -11,6 +11,8 @@ let listOfComments = [];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  listOfComments = [];
+
   let filePath = './public/healthfiles/health.xml';
   fs.readFile( filePath, 'utf8', function(err, data) {
     //var result = convert.xml2json(data, {compact: true, spaces: 4});
@@ -32,9 +34,12 @@ router.get('/', function(req, res, next) {
                     commentDate : '',
                     comment : ''
                   }
-                  commentData.commentDate = result.report.assessment[0].node[i].node[j].node[k].$['comment-date'];
-                  commentData.comment = result.report.assessment[0].node[i].node[j].node[k].$.comment;
+                   commentData.commentDate = result.report.assessment[0].node[i].node[j].node[k].$['comment-date'];
+                   commentData.comment = result.report.assessment[0].node[i].node[j].node[k].$.comment;
+                  //listOfComments.push(result.report.assessment[0].node[i].node[j].node[k].$.comment)
                   listOfComments.push(commentData)
+
+                  //console.log(result.report.assessment[0].node[i].node[j].node[k].$.comment)
                 }
         
               }
