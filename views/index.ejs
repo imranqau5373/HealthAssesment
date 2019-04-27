@@ -12,7 +12,7 @@
       <li><%= item.comment %> : <%= item.commentDate %> </li>
     <% })%>
   </ul>
-    <a href="/facebook">Post on Facebook</a>
+    <input type="button" onclick="postOnFacebook()">Post on Facebook</a>
   </body>
   <script type="text/javascript">
       function postOnFacebook() {
@@ -20,7 +20,7 @@
         FB.ui(
             {
                 method: 'share',
-                href: 'https://www.wholesalevoipprovider.com/',
+                href: 'https://health-assesment.herokuapp.com/',
             },
             // callback
             function (response) {
@@ -35,7 +35,7 @@
 
     window.fbAsyncInit = function () {
         FB.init({
-            appId: '593239947842894',
+            appId: '296235737946194',
             xfbml: true,
             version: 'v2.5'
         });
