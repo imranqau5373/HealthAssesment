@@ -9,7 +9,6 @@ let listOfComments = [];
 
 
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
   listOfComments = [];
 
@@ -60,9 +59,21 @@ router.get('/', function(req, res, next) {
   // res.render('index', { listOfComments: listOfComments });
 });
 
-router.get('/facebook', function(req, res, next) {
-  res.json('Post on facebook.')
+// router.get('/facebook', function(req, res, next) {
+//   var redirect_uri = "http://localhost" +    "/verfication";
+//   // For eg. "http://localhost:3000/facebook/callback"
+//   var params = {'redirect_uri': redirect_uri, 'scope':'user_about_me,publish_actions'};
+//   res.redirect(oauth2.getAuthorizeUrl(params));
+//   //res.json('Post on facebook.')
+
+// });
+
+
+
+router.get('/verfication', function(req, res, next) {
+  res.json('After Verification.')
 
 });
+
 
 module.exports = router;
